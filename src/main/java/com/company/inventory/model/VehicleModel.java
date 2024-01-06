@@ -7,17 +7,17 @@ import java.time.LocalDate;
  * license plate, price, status, fuel type and kilometers
  */
 public class VehicleModel {
-    
-    private String brand;
-    private String model;
-    private LocalDate dateOfManufacture;
-    private String color;
-    private String licensePlate;
-    private float price;
-    private Status status;
-    private FuelType fuelType;
-    private float kms;
-    
+
+    public String brand;
+    public String model;
+    public LocalDate dateOfManufacture;
+    public String color;
+    public String licensePlate;
+    public float price;
+    public Status status;
+    public FuelType fuelType;
+    public float kms;
+
     /**
      * Status enum for vehicle
      */
@@ -36,18 +36,18 @@ public class VehicleModel {
      * Constructs a vehicle with a brand, model, date of manufacture, color,
      * license plate, price, status, fuel type and kilometers
      * 
-     * @param brand the brand
-     * @param model the model
+     * @param brand             the brand
+     * @param model             the model
      * @param dateOfManufacture the date of manufacture
-     * @param color the color
-     * @param licensePlate the license plate
-     * @param price the price
-     * @param status the status
-     * @param fuelType the fuel type
-     * @param kms the kilometers
+     * @param color             the color
+     * @param licensePlate      the license plate
+     * @param price             the price
+     * @param status            the status
+     * @param fuelType          the fuel type
+     * @param kms               the kilometers
      */
-    public VehicleModel(String brand, String model, LocalDate dateOfManufacture, String color,
-                        String licensePlate, float price, Status status, FuelType fuelType, float kms) {
+    public VehicleModel(String brand, String model, LocalDate dateOfManufacture, String color, String licensePlate,
+            float price, Status status, FuelType fuelType, float kms) {
         this.brand = brand;
         this.model = model;
         this.dateOfManufacture = dateOfManufacture;

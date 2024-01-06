@@ -27,14 +27,20 @@ The modules (packages) are organized as follows:
 
 ### Interesting points / Issues I encountered
 
-- Yes.
+- On the UI side, I had to look carefully at the Java Swing documentation to understand how to use the different components and how to handle events.
 
 ### Extra: Setup of Makefile
 
 ```bash
-# To run everything
+# To compile everything
 make # or make all
+
+# To run the application
+make run
 
 # To run tests
 make test
+
+# To clean
+make clean
 ```
