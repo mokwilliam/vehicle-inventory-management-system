@@ -17,8 +17,7 @@ docs:
 
 getjar:
 	cd $(CLASSES_DEST); jar cfm vehicleInventory.jar ../../$(MANIFEST) main/
-	rm -rf $(DIST)
-	mkdir $(DIST)
+	mkdir -p $(DIST)
 	mv $(CLASSES_DEST)/vehicleInventory.jar $(DIST)
 
 run:
@@ -28,4 +27,4 @@ run:
 clean:
 	rm -rf $(CLASSES_DEST)/*
 	rm -rf $(DOC)/*
-	rm -rf $(DIST)
+	rm -rf $(DIST)/vehicleInventory.jar

@@ -4,6 +4,9 @@ import java.util.HashMap;
 
 import com.company.inventory.model.VehicleModel;
 
+/**
+ * Represents the vehicle Digital Access Object (DAO)
+ */
 public class VehicleDAO {
 
     private HashMap<String, VehicleModel> carDatabase;
@@ -33,6 +36,11 @@ public class VehicleDAO {
      */
     public void addVehicle(VehicleModel vehicle) {
         // Add vehicle to database
+        this.carDatabase.put(vehicle.licensePlate, vehicle);
+    }
+
+    public void updateVehicle(VehicleModel vehicle) {
+        // Update vehicle in database
         this.carDatabase.put(vehicle.licensePlate, vehicle);
     }
 

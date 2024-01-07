@@ -19,6 +19,9 @@ public class Main {
 
 }
 
+/**
+ * Represents the vehicle inventory application
+ */
 class VehicleInventoryApp {
 
     /**

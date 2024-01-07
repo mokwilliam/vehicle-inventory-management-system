@@ -28,6 +28,7 @@ The modules (packages) are organized as follows:
 ### Interesting points / Issues I encountered
 
 - On the UI side, I had to look carefully at the Java Swing documentation to understand how to use the different components and how to handle events.
+- I didn't know why when I clicked on the "Modify/Remove" button, the action continued to be performed on the following rows. I finally understood that ActionListener should have been specified in the constructor of the button.
 
 ### Extra: Setup of Makefile
 
