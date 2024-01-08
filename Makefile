@@ -36,3 +36,10 @@ clean:
 	rm -rf $(CLASSES_DEST_TEST)/*
 	rm -rf $(DOC)/*
 	rm -rf $(DIST)/vehicleInventory.jar
+
+=======================
+
+```
+rm -rf target/classes/* && javac -cp target/classes/ -sourcepath src/main/java/ -d target/classes/ src/main/java/com/company/inventory/Main.java && java -cp target/classes/ com.company.inventory.Main
+rm -rf target/test_classes/* && javac -cp target/classes/;target/test_classes/;dist/junit-4.13.2.jar;dist/hamcrest-core-1.3.jar -sourcepath src/test/java/ -d target/test_classes/ src/test/java/com/company/inventory/VehicleDAOTest.java && java -cp target/classes/;target/test_classes/;dist/junit-4.13.2.jar;dist/hamcrest-core-1.3.jar org.junit.runner.JUnitCore com.company.inventory.VehicleDAOTest
+```
