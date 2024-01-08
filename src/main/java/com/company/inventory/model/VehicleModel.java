@@ -8,11 +8,11 @@ import java.time.LocalDate;
  */
 public class VehicleModel {
 
+    public String licensePlate;
     public String brand;
     public String model;
     public LocalDate dateOfManufacture;
     public String color;
-    public String licensePlate;
     public float price;
     public Status status;
     public FuelType fuelType;
@@ -36,27 +36,34 @@ public class VehicleModel {
      * Constructs a vehicle with a brand, model, date of manufacture, color,
      * license plate, price, status, fuel type and kilometers
      * 
+     * @param licensePlate      the license plate
      * @param brand             the brand
      * @param model             the model
      * @param dateOfManufacture the date of manufacture
      * @param color             the color
-     * @param licensePlate      the license plate
      * @param price             the price
      * @param status            the status
      * @param fuelType          the fuel type
      * @param kms               the kilometers
      */
-    public VehicleModel(String brand, String model, LocalDate dateOfManufacture, String color, String licensePlate,
+    public VehicleModel(String licensePlate, String brand, String model, LocalDate dateOfManufacture, String color,
             float price, Status status, FuelType fuelType, float kms) {
+        this.licensePlate = licensePlate;
         this.brand = brand;
         this.model = model;
         this.dateOfManufacture = dateOfManufacture;
         this.color = color;
-        this.licensePlate = licensePlate;
         this.price = price;
         this.status = status;
         this.fuelType = fuelType;
         this.kms = kms;
+    }
+
+    @Override
+    public String toString() {
+        return "VehicleModel [brand=" + brand + ", model=" + model + ", dateOfManufacture=" + dateOfManufacture
+                + ", color=" + color + ", licensePlate=" + licensePlate + ", price=" + price + ", status=" + status
+                + ", fuelType=" + fuelType + ", kms=" + kms + "]";
     }
 
 }

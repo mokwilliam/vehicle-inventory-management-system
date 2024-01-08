@@ -2,7 +2,6 @@ package com.company.inventory.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.time.LocalDate;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.JButton;
@@ -23,9 +22,6 @@ import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
 import com.company.inventory.dao.VehicleDAO;
-import com.company.inventory.model.VehicleModel;
-import com.company.inventory.model.VehicleModel.FuelType;
-import com.company.inventory.model.VehicleModel.Status;
 
 /**
  * Represents the view inventory panel
@@ -47,20 +43,8 @@ public class ViewInventory extends JPanel {
             "Actions"
     };
 
-    // Initialize the DAO
-    protected VehicleDAO vehicleDAO = new VehicleDAO();
-
-    // Create the "Add" button
-    private JButton btnAdd;
-
-    // Default data for the table
-    protected Object[][] data = new Object[][] {
-            { "Toyota", "Camry", "2019-01-01", "White", "ABC123", 59999.99, "AVAILABLE", "HYBRID", 168712, "" },
-            { "BMW", "M3", "2019-01-01", "Black", "DEF456", 100000, "AVAILABLE", "PETROL", 98432, "" }
-    };
-
     // Create the table
-    protected JTable inventoryTable = new JTable(new MyTableModel(data, columns));
+    protected JTable inventoryTable = new JTable(new MyTableModel(columns));
     protected TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(inventoryTable.getModel());
     protected JTextField textField = new JTextField();
 
@@ -76,7 +60,7 @@ public class ViewInventory extends JPanel {
         inventoryTable.getColumnModel().getColumn(9).setCellEditor(new ButtonEditor(new JCheckBox()));
 
         // Add ActionListeners to the buttons
-        btnAdd = new JButton("Add");
+        JButton btnAdd = new JButton("Add");
         btnAdd.addActionListener(e -> {
             new EditVehicleDialog((JFrame) SwingUtilities.getWindowAncestor(this), -1,
                     (MyTableModel) inventoryTable.getModel(), true);
@@ -139,29 +123,11 @@ public class ViewInventory extends JPanel {
         /**
          * Constructs a table model with the specified data and columns
          */
-        public MyTableModel(Object[][] data, String[] columns) {
-            this.data = data;
-            this.columns = columns;
+        public MyTableModel(String[] columns) {
             this.vehicleDAO = new VehicleDAO();
-        }
-
-        /**
-         * Formats the data from the table to a VehicleModel
-         * 
-         * @param rowData the data from the table
-         * @return the VehicleModel
-         */
-        public VehicleModel formatVehicleModel(Object[] rowData) {
-            return new VehicleModel(
-                    rowData[0].toString(),
-                    rowData[1].toString(),
-                    LocalDate.parse(rowData[2].toString()),
-                    rowData[3].toString(),
-                    rowData[4].toString(),
-                    Float.valueOf(rowData[5].toString()),
-                    Status.valueOf(rowData[6].toString()),
-                    FuelType.valueOf(rowData[7].toString()),
-                    Float.valueOf(rowData[8].toString()));
+            vehicleDAO.displayDatabase();
+            this.data = vehicleDAO.getVehicles();
+            this.columns = columns;
         }
 
         @Override
@@ -196,13 +162,17 @@ public class ViewInventory extends JPanel {
         public void addRow(Object[] rowData) {
             Object[][] newData = new Object[data.length + 1][columns.length];
             for (int i = 0; i < data.length; i++) {
+                while (data[i][4].equals(rowData[4])) {
+                    rowData[4] += "1";
+                }
                 newData[i] = data[i];
             }
+
             newData[data.length] = rowData;
             data = newData;
 
             // Add vehicle to database
-            vehicleDAO.addVehicle(formatVehicleModel(rowData));
+            vehicleDAO.addVehicle(rowData);
 
             // Notify the table of changes
             fireTableRowsInserted(data.length - 1, data.length - 1);
@@ -219,7 +189,7 @@ public class ViewInventory extends JPanel {
                 data[row] = rowData;
 
                 // Update vehicle in database
-                vehicleDAO.updateVehicle(formatVehicleModel(rowData));
+                vehicleDAO.updateVehicle(rowData);
 
                 // Notify the table of changes
                 fireTableRowsUpdated(row, row);
@@ -240,10 +210,12 @@ public class ViewInventory extends JPanel {
                         newData[idx++] = data[i];
                     }
                 }
-                data = newData;
 
                 // Remove vehicle from database
-                vehicleDAO.removeVehicle(formatVehicleModel(data[row]).licensePlate);
+                vehicleDAO.removeVehicle(data[row][4].toString());
+
+                // Update the data
+                data = newData;
 
                 // Notify the table of changes
                 fireTableRowsDeleted(row, row);

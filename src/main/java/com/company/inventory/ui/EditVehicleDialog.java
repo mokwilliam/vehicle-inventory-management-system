@@ -59,7 +59,7 @@ public class EditVehicleDialog extends JDialog {
         panel.add(brandField);
         panel.add(new JLabel("Model: "));
         panel.add(modelField);
-        panel.add(new JLabel("Date of Manufacture: "));
+        panel.add(new JLabel("Date of Manufacture (yyyy-MM-dd): "));
         panel.add(dateField);
         panel.add(new JLabel("Color: "));
         panel.add(colorField);
@@ -84,23 +84,23 @@ public class EditVehicleDialog extends JDialog {
                     rowData[2] = LocalDate.parse(dateField.getText());
                     rowData[2] = dateField.getText();
                 } catch (DateTimeParseException ex) {
-                    rowData[2] = LocalDate.now().toString();
+                    // Invalid input for date
                 }
                 rowData[3] = colorField.getText();
                 rowData[4] = plateField.getText();
                 try {
-                    rowData[5] = Float.valueOf(priceField.getText());
-                    rowData[5] = priceField.getText();
+                    rowData[5] = String.format("%.2f", Float.parseFloat(
+                            priceField.getText().replace(",", ".")));
                 } catch (NumberFormatException ex) {
-                    rowData[5] = "0";
+                    // Invalid input for price
                 }
                 rowData[6] = statusField.getSelectedItem();
                 rowData[7] = fuelField.getSelectedItem();
                 try {
-                    rowData[8] = Float.valueOf(kmsField.getText());
-                    rowData[8] = kmsField.getText();
+                    rowData[8] = String.format("%.2f", Float.parseFloat(
+                            kmsField.getText().replace(",", ".")));
                 } catch (NumberFormatException ex) {
-                    rowData[8] = "0";
+                    // Invalid input for kilometers
                 }
 
                 if (isAddOperation)
