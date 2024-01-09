@@ -1,0 +1,46 @@
+{
+  "ABC123" : {
+    "licensePlate" : "ABC123",
+    "brand" : "Toyota",
+    "model" : "Camry",
+    "dateOfManufacture" : "2019-01-01",
+    "color" : "Yellow",
+    "price" : "59999.99",
+    "status" : "AVAILABLE",
+    "fuelType" : "HYBRID",
+    "kms" : "168712.0"
+  },
+  "DEF456" : {
+    "licensePlate" : "DEF456",
+    "brand" : "BMW",
+    "model" : "M3",
+    "dateOfManufacture" : "2019-01-01",
+    "color" : "Green",
+    "price" : "100000.0",
+    "status" : "AVAILABLE",
+    "fuelType" : "PETROL",
+    "kms" : "98432.0"
+  },
+  "EFX751" : {
+    "licensePlate" : "EFX751",
+    "brand" : "Renaut",
+    "model" : "Clio 3",
+    "dateOfManufacture" : "2012-04-18",
+    "color" : "Blue",
+    "price" : "41837.35",
+    "status" : "AVAILABLE",
+    "fuelType" : "PETROL",
+    "kms" : "156123.16"
+  },
+  "ZFE780" : {
+    "licensePlate" : "ZFE780",
+    "brand" : "Peugeot",
+    "model" : "206",
+    "dateOfManufacture" : "2007-01-09",
+    "color" : "Red",
+    "price" : "24132.16",
+    "status" : "AVAILABLE",
+    "fuelType" : "PETROL",
+    "kms" : "179135.48"
+  }
+}

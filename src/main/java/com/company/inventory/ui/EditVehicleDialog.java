@@ -25,15 +25,36 @@ import com.company.inventory.ui.ViewInventory.MyTableModel;
  * @see JDialog
  */
 public class EditVehicleDialog extends JDialog {
+
+    /**
+     * The row data
+     */
     private Object[] rowData;
+
+    /**
+     * The fields for the vehicle
+     */
     private JTextField brandField, modelField, dateField, colorField, plateField,
             priceField, kmsField;
+
+    /**
+     * The status field for the vehicle
+     */
     private JComboBox<Status> statusField;
+
+    /**
+     * The fuel type field for the vehicle
+     */
     private JComboBox<FuelType> fuelField;
 
     /**
      * Constructs an edit vehicle dialog with the specified parent, row, table
      * model, and add operation
+     * 
+     * @param parent         the parent frame
+     * @param row            the row to edit
+     * @param tableModel     the table model
+     * @param isAddOperation whether it is an add operation
      */
     public EditVehicleDialog(JFrame parent, int row, MyTableModel tableModel, boolean isAddOperation) {
         super(parent, "Edit Vehicle", true);

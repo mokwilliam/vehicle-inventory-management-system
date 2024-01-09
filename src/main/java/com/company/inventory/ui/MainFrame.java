@@ -9,10 +9,15 @@ import javax.swing.JFrame;
  */
 public class MainFrame extends JFrame {
 
-    public MainFrame() {
+    /**
+     * Constructs a main frame with the specified isAdmin
+     * 
+     * @param isAdmin whether the user is an admin
+     */
+    public MainFrame(boolean isAdmin) {
         // Create the main frame and the panels
         this.setTitle("Vehicle Inventory Management System");
-        this.add(new ViewInventory());
+        this.add(new ViewInventory(isAdmin));
         this.setSize(800, 600);
         this.setPreferredSize(new Dimension(800, 600));
         // this.setResizable(false);

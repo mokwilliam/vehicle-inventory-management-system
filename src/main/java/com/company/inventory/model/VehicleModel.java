@@ -8,28 +8,93 @@ import java.time.LocalDate;
  */
 public class VehicleModel {
 
+    /**
+     * The license plate
+     */
     public String licensePlate;
+
+    /**
+     * The brand
+     */
     public String brand;
+
+    /**
+     * The model
+     */
     public String model;
+
+    /**
+     * The date of manufacture
+     */
     public LocalDate dateOfManufacture;
+
+    /**
+     * The color
+     */
     public String color;
+
+    /**
+     * The price
+     */
     public float price;
+
+    /**
+     * The status
+     */
     public Status status;
+
+    /**
+     * The fuel type
+     */
     public FuelType fuelType;
+
+    /**
+     * The kilometers
+     */
     public float kms;
 
     /**
      * Status enum for vehicle
+     * 
+     * {@link Status#AVAILABLE}
+     * {@link Status#SOLD}
      */
     public enum Status {
-        AVAILABLE, SOLD
+        /**
+         * Available status
+         */
+        AVAILABLE,
+        /**
+         * Sold status
+         */
+        SOLD
     }
 
     /**
      * FuelType enum for vehicle
+     * 
+     * {@link FuelType#PETROL}
+     * {@link FuelType#DIESEL}
+     * {@link FuelType#ELECTRIC}
+     * {@link FuelType#HYBRID}
      */
     public enum FuelType {
-        PETROL, DIESEL, ELECTRIC, HYBRID
+        /**
+         * Petrol fuel type
+         */
+        PETROL,
+        /**
+         * Diesel fuel type
+         */
+        DIESEL,
+        /**
+         * Electric fuel type
+         */
+        ELECTRIC,
+        /**
+         * Hybrid fuel type
+         */
+        HYBRID
     }
 
     /**
