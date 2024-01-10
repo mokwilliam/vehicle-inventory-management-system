@@ -21,8 +21,8 @@ The JAR files retrieved and stored in the `lib` folder are:
 - [Jackson core](https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.14.0/jackson-core-2.14.0.jar)
 - [Jackson annotations](https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.14.0/jackson-annotations-2.14.0.jar)
 - [Jackson databind](https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.14.0/jackson-databind-2.14.0.jar)
-- [JUnit] (https://repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar)
-- [Hamcrest] (https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar)
+- [JUnit](https://repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar)
+- [Hamcrest](https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar)
 
 On Windows, I use the `make_win.sh` script to compile and run the application. On Linux, we can use the `Makefile`.
 
