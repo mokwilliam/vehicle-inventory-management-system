@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
 Main-Class: com.company.inventory.Main
-Class-Path: target/classes lib
+Class-Path: target/classes
 Created-By: mokwilliam

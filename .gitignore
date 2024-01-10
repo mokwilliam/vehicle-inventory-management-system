@@ -26,5 +26,7 @@ replay_pid*
 # Vscode
 .vscode/
 
-# Libraries
+# Libraries & Dependencies & Doc
 lib/
+tmp_extracted_classes/
+docs/

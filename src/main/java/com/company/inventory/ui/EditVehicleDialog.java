@@ -73,7 +73,9 @@ public class EditVehicleDialog extends JDialog {
         plateField = new JTextField(rowData[4].toString());
         priceField = new JTextField(rowData[5].toString());
         statusField = new JComboBox<>(Status.values());
+        statusField.setSelectedItem(Status.valueOf(rowData[6].toString()));
         fuelField = new JComboBox<>(FuelType.values());
+        fuelField.setSelectedItem(FuelType.valueOf(rowData[7].toString()));
         kmsField = new JTextField(rowData[8].toString());
 
         panel.add(new JLabel("Brand: "));
