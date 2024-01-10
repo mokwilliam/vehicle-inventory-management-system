@@ -5,7 +5,7 @@ FROM openjdk:21-jdk-slim
 WORKDIR /usr/src/vehicleInventoryApp
 
 # Copy the JAR file from your project's dist directory to the container
-COPY ../dist/vehicleInventory.jar .
+COPY dist/ .
 
 # Command to run the application when the container starts
 CMD ["java", "-jar", "vehicleInventory.jar"]

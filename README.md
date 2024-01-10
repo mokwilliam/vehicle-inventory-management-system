@@ -59,11 +59,11 @@ make_win.sh
 make_win.sh run
 ```
 
-On Docker (**compile before to get jar file**), we can use the following commands:
+[DO NOT WORK] On Docker (**compile before to get jar file**), we can use the following commands:
 
 ```bash
 # Docker compose
-docker-compose up
+docker compose up
 
 # To build the image
 docker build -t vehicle-inventory-app .
@@ -87,7 +87,8 @@ docker rmi vehicle-inventory-app
 ### Possible improvements
 
 - Use a database to store the data instead of a JSON file
-- The authentication system is not very secure. We could use a more robust system (instead of writing the password in the code).
+- The authentication system is not very secure. We could use a more robust system (instead of writing the password in the code)
+- Make the app work on a Docker container
 
 ### Extra: Setup of Makefile
 
