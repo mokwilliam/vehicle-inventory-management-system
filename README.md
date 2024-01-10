@@ -35,6 +35,46 @@ The modules (packages) are organized as follows:
 - `com.company.inventory.model`: contains the model classes defining the data structure
 - `com.company.inventory.ui`: contains the user interface classes handling user interface components
 
+### 2. Running the application
+
+The application can be run using the following commands present in the `make_win.sh` script (for Windows) or in the `Makefile` (for Linux):
+
+- For Makefile:
+
+```bash
+# To compile everything
+make # or make all ()
+
+# To run the application
+make run
+```
+
+- For make_win.sh:
+
+```bash
+# To compile everything
+make_win.sh
+
+# To run the application
+make_win.sh run
+```
+
+On Docker (**compile before to get jar file**), we can use the following commands:
+
+```bash
+# Docker compose
+docker-compose up
+
+# To build the image
+docker build -t vehicle-inventory-app .
+
+# To run the container
+docker run -it --rm --name vehicle-inventory-running-app vehicle-inventory-app
+
+# To remove the image
+docker rmi vehicle-inventory-app
+```
+
 ### Interesting points / Issues I encountered
 
 - On the UI side, I had to look carefully at the Java Swing documentation to understand how to use the different components and how to handle events.
