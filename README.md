@@ -12,6 +12,22 @@ This small project focuses on creating a Vehicle Inventory Management System. Th
 
 The Vehicle Inventory Management System is a Java-based software designed for a vehicle selling company. It serves as a centralized repository to manage and store information about cars available for sale. The system allows employees to perform various actions such as adding new cars, removing existing cars, and querying the inventory based on specific criteria.
 
+As a client, you can:
+
+- Look at the inventory
+- Look for a specific vehicle with the search bar
+
+![Client side GIF](images/client_side.gif)
+
+As an admin, you can:
+
+- Do what a client can
+- Add, update and/or remove a vehicle
+
+![Admin side GIF](images/admin_side.gif)
+
+At the exit of the application, the database is saved automatically.
+
 ## Steps followed
 
 ### 0. Installation & Setup
